@@ -1,234 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Minecraft Server Name]</title>
-    <link rel="icon" type="image/png" href="media/favicon.png">
-    <link rel="stylesheet" href="media/style.css">
-    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <nav class="desktop_navbar">
-      <a href="#"><img class="desktop_navbar_logo_img" src="media/logo_small.png" alt="logo"></a>
-      <a href="https://wiki.example.com/" class="desktop_navbar_link">Wiki</a>
-      <a href="#discord" class="desktop_navbar_link scroll">Community</a>
-      <a href="#about" class="desktop_navbar_link scroll">About Us</a>
-      <div class="desktop_navbar_link2_div">
-          <a href="#join" class="desktop_navbar_link2 scroll">Join Us!</a>
-      </div>
+    <title>Ben VanDW - Dev CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body class="min-h-screen bg-black text-white font-sans antialiased">
+  <nav class="flex justify-between items-center p-6 backdrop-blur-sm border-b border-zinc-800 sticky top-0 z-50">
+    <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        BenVDW
+    </div>
+
+    <div class="hidden md:flex gap-8">
+        <a href="#home" class="text-white hover:text-blue-400 transition-colors duration-300">Home</a>
+        <a href="#experience" class="text-white hover:text-blue-400 transition-colors duration-300">Experience</a>
+        <a href="#projects" class="text-white hover:text-blue-400 transition-colors duration-300">Projects</a>
+        <a href="#education" class="text-white hover:text-blue-400 transition-colors duration-300">Education</a>
+        <a href="#skills" class="text-white hover:text-blue-400 transition-colors duration-300">Skills</a>
+        <a href="#contact" class="text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
+    </div>
+
+    <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
     </nav>
-    <div class="mobile_navbar">
-      <a href="#" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="media/logo_small.png" alt="logo"></a>
-      <div id="mobile_navbar_links">
-          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://wiki.example.com/">Wiki</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#discord">Community</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#about">About Us</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#join">Join Us</a>
-        </div>
-        <div class="icon" onclick="mobile_navbar_link_hider()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <script>
-            function mobile_navbar_link_hider() {
-            var x = document.getElementById("mobile_navbar_links");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
-            } 
-        </script>
-    </div>
-    <div class="mainflex">
-      <div class="main1">
-        <a class="main1_logo_a" href="#">
-          <img class="main1_logo" src="media/logo.png" alt="logo">
-        </a>
-        <div class="main1_description">
-          <a>Minecraft,<br>like</a>
-          <a class="main1_actcent">already done before</a><a>.</a>
-        </div>
-        <div class="main1_ipcopier_div">
-          <button class="main1_ipcopier" onclick="copyText()" type="button">
-            <span class="main1_ipcopier_text1">play.example.com</span>
-            <br>
-            <span class="main1_ipcopier_text2">Click to copy</span>
-          </button>
-          <script>
-            function copyText() {
-                navigator.clipboard.writeText
-            ("play.example.com");
-                }
-            $(document).ready(function() {
-            $('.main1_ipcopier').click(function() {
-                var popup = $('<div>', { class: 'main1_popup' })
-                .append($('<h3 class="copy_confirm">').text('Copied IP to clipboard'))
-                $(this).after(popup);
-                setTimeout(function() {
-                popup.remove();
-                }, 1000);
-            });
-            });
-        </script>
-        </div>
-        <a href="#more" class="scroll">
-          <img alt="downarrow" class="main1_downarrow" src="media/downarrow.png">
-        </a>
-        <script>
-          const scrollLinks = document.querySelectorAll('.scroll');
-          scrollLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-              event.preventDefault();
-              const target = document.querySelector(link.getAttribute('href'));
-              const offsetTop = target.offsetTop;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            });
-          });
-        </script>
-      </div>
-      <div id="more"></div>
-      <div class="main2">
-        <a class="headline">What we have</a>
-        <div class="main2_features_div">
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 1</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 2</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 3</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 4</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 5</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-        </div>
-      </div>
-      <div id="discord"></div>
-      <div class="main4">
-        <a class="headline">Join the Discord</a>
-        <div class="main4_dc_div">
-          <iframe class="main4_dc_widget" src="https://imgur.com/78RPeUY.png" width="350" height="500" title="discord" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-          <div class="main4_dc_description_div">
-            <a class="main4_dc_description_title">Let's talk!</a>
-            <a class="main4_dc_description"> ・Meet other players <br> ・Ask questions <br> ・Get notified about updates <br> ・Give feedback  <br><br> &amp; more </a>
-            <a href="https://discord.gg/INVITE" class="main4_dc_button_a">
-              <div class="main4_dc_button">Join</div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div id="about"></div>
-      <div class="main5">
-        <a class="headline">Who we are</a>
-        <div class="main5_admin_div">
-          <div class="main5_admins_div main5_admins_dev_type2">
-            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Owner]</a>
-              <a class="main5_admins_description_title" href="https://example.com">Owner Name</a>
-              <a class="main5_admins_description">Owner<br>description</a>
+
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-zinc-900 bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-xl transition-transform duration-300 ease-in-out transform -translate-x-full">
+    <a href="#home" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Home</a>
+    <a href="#experience" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Experience</a>
+    <a href="#projects" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Projects</a>
+    <a href="#education" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Education</a>
+    <a href="#skills" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Skills</a>
+    <a href="#contact" class="text-white hover:text-blue-400" onclick="closeMobileMenu()">Contact</a>
+    <button class="absolute top-6 right-6 text-white focus:outline-none" onclick="closeMobileMenu()">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+</div>
+
+    <main class="max-w-7xl mx-auto py-12 px-6 lg:px-8">
+        <section id="home" class="flex flex-col md:flex-row items-center justify-between py-16 md:py-24 gap-8">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Hi, I'm Ben, a Developer
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-6 max-w-2xl mx-auto md:mx-0">
+                    Passionate about Incident Response and Continuity
+                </p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#contact" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700">
+                        Get In Touch
+                    </a>
+                    <a href="https://github.com/benvandw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input h-10 px-4 py-2 bg-transparent text-white hover:bg-zinc-800">
+                        <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.169 6.839 9.484.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.704-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.107-1.464-1.107-1.464-.905-.619.069-.607.069-.607 1.002.07 1.531 1.03 1.531 1.03.89 1.529 2.341 1.088 2.91.831.091-.645.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.984 1.029-2.684-.103-.253-.447-1.272.098-2.65 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.115 2.502.339 1.909-1.294 2.747-1.026 2.747-1.026.546 1.378.202 2.397.098 2.65.64.7 1.028 1.592 1.028 2.684 0 3.843-2.339 4.689-4.568 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .267.18.579.688.484C20.149 20.166 23 16.417 23 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        GitHub
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type1">
-            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Admin]</a>
-              <a class="main5_admins_description_title" href="https://example.com">Admin Name</a>
-              <a class="main5_admins_description">Admin<br>description</a>
+            <div class="flex-shrink-0 mt-8 md:mt-0">
+                <img src="Imgs/profile.png" alt="Profile Picture" width="280" height="256" class="rounded-full border-4 border-blue-400 shadow-lg"/>
             </div>
-          </div>
-        </div>
-        <div class="main5_supporter_div">
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 1</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">My Journey</h3>
+                    <p class="text-gray-300 text-base">
+                        My background spans across cybersecurity, emergency management, first aid, and customer service—including frontline roles at McDonald's, where I honed my skills in high-pressure environments and learned to manage complex situations with professionalism and empathy. Whether it’s de-escalating difficult customer interactions or handling critical incidents, I thrive in high-stress environments that demand quick thinking and clear communication. </p>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">What Drives Me</h3>
+                    <p class="text-gray-300 text-base">
+                        I’m a continuous learner and natural investigator, Whether I’m speaking with a client, team member, or stakeholder, I prioritize clear, thoughtful communication as a critical tool for effective collaboration and success.
+                    </p>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-3 text-green-400">My Approach</h3>
+                    <p class="text-gray-300 text-base">
+                        Combining my cybersecurity studies with hands-on experience in triaging and incident response, I’m passionate about solving problems under pressure, leading teams through difficult situations, and breaking down complex issues "pinboard and string style"—tracing problems back to their roots to better understand, respond, and resolve.
+                </div>
             </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 2</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
+        </section>
+
+        <section id="experience" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">Experience</h2>
+            <div class="space-y-8 relative">
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Shift Manager - McDonald's New Zealand</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>May 2025 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Promoted to Fully Qualified manager overseeing full shifts and consulting on areas for restaurant improvement.
+                    </p>
+                    <div id="shiftManagerDetails" class="hidden text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Applied leadership and team coordination skills to manage high-performing crews and deliver fast, consistent service in a high-pressure environment.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Identified opportunities for cost reduction and operational efficiency, contributing to improved workflow and team productivity.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Implemented and tested new methods and technologies to enhance day-to-day operations.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Focused on delivering exceptional customer experiences to increase return visits and support client loyalty.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="shiftManagerDetails">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <div class="relative pl-8 mt-6">
+                        <div class="absolute -left-2 top-0 w-3 h-3 bg-gray-500 rounded-full"></div>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                            <h5 class="text-md font-semibold text-gray-300">Management Trainee & Shift Supervisor - McDonald's New Zealand</h5>
+                            <div class="flex items-center gap-2 text-gray-500 text-sm">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Dec 2024 - Apr 2025 · 5 mos</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                            Developed skills in management, employee training, and team supervision during intensive trainee period.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="relative pl-8 border-l-2 border-gray-600 mt-6">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Team Lead : Incident Response and Continuity</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>May 2025 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Project Kororā · Part-time · Wellington, New Zealand · Hybrid
+                    </p>
+                    <p class="text-gray-300 mb-3">
+                        Heading a team of experts on maintaining and monitoring the development of Victoria University of Wellington's first satellite project.
+                    </p>
+                    <div id="project-korora-content" class="hidden text-gray-400 space-y-1">
+                        <p class="text-gray-300 mb-2">Key responsibilities:</p>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Administrating the Git Organization.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Coordinating Incident response with group leaders / Experts.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Developing Contingency plans and policies to organize response.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Overseeing code and hardware security.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Leading Hybrid Team meetings.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Liaising with industry professionals and academics on key issues.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="project-korora-content">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Vice President - Victoria Engineering Club (VEC)</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>Jul 2025 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Victoria University of Wellington · Part-time · Wellington, New Zealand · Hybrid
+                    </p>
+                    <p class="text-gray-300 mb-3">
+                        Serving as Vice President, I assist the President in overseeing all club operations, represent the club at university-wide events, and support the Executive Committee in achieving strategic goals.
+                    </p>
+                    <div id="vec-vp-details" class="hidden text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Collaborated with the President to develop and implement club initiatives, ensuring alignment with VEC's mission and values.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Represented VEC in meetings with university faculty, administration, and external organizations, enhancing the club's visibility and partnerships.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Provided leadership and mentorship to committee members, fostering a collaborative and productive environment.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Assisted in the planning and execution of major club events, including workshops, career fairs, and social gatherings.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="vec-vp-details">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Head of Victoria Security Engineering Club and Executive Committee Member of VEC</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>Jun 2024 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Victoria Engineering Club · Part-time · Wellington, New Zealand · Hybrid
+                    </p>
+                    <p class="text-gray-300 mb-3">
+                        Lead the Victoria Security Engineering Club (VSEC). Serve as an Executive Committee Member for VEC, Represent VSEC on the VUW STEM Committee.
+                    </p>
+                    <div id="vec-head-content" class="hidden text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Organized guest speakers, technical workshops, and community events to promote cybersecurity awareness and skills development.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Delivered and led educational courses such as ASD EXP, ISC2's Certified in Cybersecurity (CC), and more.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Assisted in coordinating large-scale events, including the 2024 STEM Ball.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Managed, identified, and reported on security risks across VEC and all affiliated daughter/sister clubs.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="vec-head-content">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
             </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 3</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
+            
+            <div id="all-experience-content" class="hidden space-y-8 ">
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Engineering Tutor - ENGR101/110</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>Feb 2025 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Victoria University of Wellington · Contract · Wellington, New Zealand · On-site
+                    </p>
+                    <div id="engineering-tutor-content" class="hidden text-gray-400 space-y-1">
+                        <ul class="space-y-1">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span>Assisted with lesson, tutorial, and assessment preparation for first-year engineering students in the most fundamental course of the degree.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span>Delivered clear and engaging tutorials, both in-person and online.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span>Led helpdesk sessions, providing timely support to students.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span>Maintained in-depth knowledge of course content to align with curriculum and academic goals.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button
+                        class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300"
+                        data-toggle-target="engineering-tutor-content"
+                        data-show-text="Show more"
+                        data-hide-text="Hide more"
+                    >
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div id="course-description-content" class="hidden text-gray-400 mt-3">
+                        <p>
+                            This course provides a general introduction to the fundamental technical concepts needed to understand the design and engineering of electronic, mechatronic, networked and software systems. Experience is gained in basic engineering practice, with assembly and testing of basic hardware, software and networked systems, and construction of a personal computer.
+                        </p>
+                    </div>
+                    <button
+                        class="text-blue-400 hover:text-blue-300 p-0 mt-1 flex items-center gap-1 text-xs font-medium transition-colors duration-300"
+                        data-toggle-target="course-description-content"
+                        data-show-text="Show course description"
+                        data-hide-text="Hide course description"
+                    >
+                        <span>Show course description</span>
+                        <svg class="w-3 h-3 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 4</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
+            <div class="text-center mt-12 bt-12">
+                <button
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-700"
+                    data-toggle-target="all-experience-content"
+                    data-show-text="Show more experience"
+                    data-hide-text="Show less experience"
+                >
+                    <span>Show more experience</span>
+                    <svg class="w-4 h-4 ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div id="join"></div>
-      <div class="main3">
-        <a class="headline">How to join</a>
-        <div class="main3_join_div_div">
-          <div class="main3_join_div">
-            <a class="main3_join_title">Java</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-                <a>IP:</a>
-                <a>Version:</a>
+ <section id="education" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+            <div class="space-y-8 relative">
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">Bachelor of Cyber Security Engineering - Victoria University of Wellington</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>February 2024 - Present</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Currently pursuing a Bachelor of Engineering, specializing in Cyber Security, focusing on Incident Response and Business Continuity.
+                    </p>
+                    <div id="vuw-education-content" class="hidden text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Key coursework includes Data Structures and Algorithms, Object-Oriented Programming, and Network Systems.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Engaged in various coding projects, applying theoretical knowledge to practical scenarios.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="vuw-education-content">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="py-16 md:py-24 border-t border-zinc-800">
+          <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-zinc-900/50 rounded-lg shadow-xl border border-zinc-800 overflow-hidden">
+              <img src="/Imgs/Korora.png" alt="Project Korora Thumbnail" width="400" height="200" class="w-full h-48 object-cover"/>
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-3 text-white">Project Kororā</h3>
+                  <p class="text-gray-300 text-sm mb-4">
+                      Victoria University of Wellington's pioneering satellite initiative, aiming to advance New Zealand's space economy through student engagement.
+                  </p>
+                  <div id="korora-project-content" class="hidden text-gray-400 space-y-1 text-sm mb-4">
+                      <p class="text-gray-300 mb-2">Motivation:</p>
+                      <ul class="space-y-1 list-none pl-0"> <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Develop New Zealand’s space economy by creating an accessible initiative for students at Te Herenga Waka.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Initial goals include designing and developing a CubeSat capable of being launched into space.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Subsequent addition of an electric propulsion (EP) thruster.</span>
+                          </li>
+                      </ul>
+                      <p class="text-gray-300 mt-4 mb-2">Key Responsibilities (as Team Lead):</p>
+                      <ul class="space-y-1 list-none pl-0">
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Administrating the Git Organization.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Coordinating Incident response with group leaders / Experts.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Developing Contingency plans and policies to organize response.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Overseeing code and hardware security.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Leading Hybrid Team meetings.</span>
+                          </li>
+                          <li class="flex items-start gap-2">
+                              <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                              <span>Liaising with industry professionals and academics on key issues.</span>
+                          </li>
+                      </ul>
+                  </div>
+                  <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="korora-project-content" data-show-text="Show more" data-hide-text="Show less">
+                      <span>Show more</span>
+                      <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </button>
+                  <div class="flex gap-3 mt-4">
+                      <a href="https://github.com/Project-Korora" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-zinc-800 text-white hover:bg-zinc-700">
+                          <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.169 6.839 9.484.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.704-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.107-1.464-1.107-1.464-.905-.619.069-.607.069-.607 1.002.07 1.531 1.03 1.531 1.03.89 1.529 2.341 1.088 2.91.831.091-.645.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.984 1.029-2.684-.103-.253-.447-1.272.098-2.65 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.115 2.502.339 1.909-1.294 2.747-1.026 2.747-1.026.546 1.378.202 2.397.098 2.65.64.7 1.028 1.592 1.028 2.684 0 3.843-2.339 4.689-4.568 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .267.18.579.688.484C20.149 20.166 23 16.417 23 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                          GitHub
+                      </a>
+                      <a href="https://projectkorora.space/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-blue-600 text-white hover:bg-blue-700">
+                          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0l-7 7m7-7v6"></path></svg>
+                          Website
+                      </a>
+                  </div>
               </div>
-              <div class="main3_join_values">
-                <a>play.example.com</a>
-                <a>1.20.1</a>
-              </div>
+          </div>
+      
+          <div class="bg-zinc-900/50 rounded-lg shadow-xl border border-zinc-800 overflow-hidden">
+            <img src="Imgs/server.jpg" alt="Home Network Management and Optimization Thumbnail" width="400" height="200" class="w-full h-48 object-cover"/>
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-3 text-white">Home Network </h3>
+                <p class="text-gray-300 text-sm mb-4">
+                    Managed and optimized a network of 15 devices and various online platforms, including servers, PCs, and laptops running a mix of Windows, macOS, and Linux.
+                </p>
+                <div id="network-project-content" class="hidden text-gray-400 space-y-1 text-sm mb-4">
+                    <p class="text-gray-300 mb-2">Network Details:</p>
+                    <ul class="space-y-1 list-none pl-0">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Optimized a network of 15 devices: 3 servers, 5 tower PCs, and 7 laptops.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Operating systems included Windows, macOS, and Linux, with dual-boot setups on two systems (Windows 10/Linux Mint).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Two Linux servers utilized Server 20.</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-300 mt-4 mb-2">Expertise Gained:</p>
+                    <ul class="space-y-1 list-none pl-0">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Linux Command Line (CMD)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>PowerShell scripting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>OpenSSH configuration and management</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>RSA encryption techniques</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>NAS (Network Attached Storage)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Home media streaming</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Docker containerization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Bash scripting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>System diagnostics and performance optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Remote Desktop and game streaming through Sunshine and Moonlight</span>
+                        </li>
+                    </ul>
+                </div>
+                <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="network-project-content" data-show-text="Show more" data-hide-text="Show less">
+                    <span>Show more</span>
+                    <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                <div class="flex gap-3 mt-4">
+                    <button disabled class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-zinc-700 text-gray-500 cursor-not-allowed">
+                        GitHub
+                    </button>
+                    <button disabled class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-blue-500 text-gray-500 cursor-not-allowed">
+                        Live Demo
+                    </button>
+                </div>
             </div>
           </div>
-          <div class="main3_join_div">
-            <a class="main3_join_title">Bedrock</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-                <a>IP:</a>
-                <a>Port:</a>
+              <div class="bg-zinc-900/50 rounded-lg shadow-xl border border-zinc-800 overflow-hidden">
+                  <img src="Imgs/arcgislogo.PNG" alt="Coming Soon Thumbnail" width="400" height="200" class="w-full h-48 object-cover"/>
+                  <div class="p-6">
+                      <h3 class="text-xl font-semibold mb-3 text-white">ArcGis Plugin</h3>
+                      <p class="text-gray-300 text-sm mb-4">
+                          Began work on a specialised plugin for ARCGIS spcifically for a disaster releif org, stay tuned for updates!
+                      </p>
+                      <div class="flex gap-3 mt-4">
+                          <button disabled class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-zinc-700 text-gray-500 cursor-not-allowed">
+                              GitHub
+                          </button>
+                          <button disabled class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-blue-500 text-gray-500 cursor-not-allowed">
+                              Live Demo
+                          </button>
+                      </div>
+                  </div>
               </div>
-              <div class="main3_join_values">
-                <a>be.example.com</a>
-                <a>69420</a>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <footer class="copyright_div">
-      <a href="https://github.com/FQQD/MCServer-Web-Template" class="copyright">Made by FQQD 2023 - Edited by [Name] [Year]</a>
+      </section>
+
+       
+        <!-- Certifications area  -->
+         <!--
+        <section id="certifications" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">Certifications & Awards</h2>
+            <div class="space-y-8 relative">
+                <div class="relative pl-8 border-l-2 border-gray-600">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-600 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h4 class="text-lg font-semibold text-white">CompTIA A+ Certified Professional</h4>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>Issued March 2023</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-3">
+                        Demonstrates foundational knowledge of IT infrastructure, networking, and security.
+                    </p>
+                    <div id="comptia-content" class="hidden text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <span>Proficient in troubleshooting, maintenance, and installation of various hardware and software.</span>
+                        </li>
+                    </div>
+                    <button class="text-blue-400 hover:text-blue-300 p-0 mt-2 flex items-center gap-1 text-sm font-medium transition-colors duration-300" data-toggle-target="comptia-content">
+                        <span>Show more</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+      -->
+
+        <section id="skills" class="py-16 md:py-24 border-t border-zinc-800">
+          <h2 class="text-4xl font-bold text-center mb-12">Skills & Expertise</h2>
+      
+          <div class="mb-16">
+              <h3 class="text-3xl font-bold text-center mb-8">Organisations</h3>
+              <div id="organisations-carousel" class="carousel-container relative w-full overflow-hidden mx-auto max-w-6xl">
+                  <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/VUW.png" alt="Wellington College" class="h-24 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/VEC.png" alt="Victoria Engineering Club" class="h-24 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/VSEC.png" alt="Victoria Security Engineering Club" class="h-24 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/AerospaceNZLogo.png" alt="Aerospace New Zealand" class="h-24 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/EngNZ.png" alt="Engineering New Zealand Official Member" class="h-24 object-contain">
+                      </div>
+                       <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/EA.png" alt="Engineering Australia" class="h-24 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/5 flex justify-center items-center p-4">
+                          <img src="otherimgs/Orgs/ROS.png" alt="Return On Science" class="h-24 object-contain">
+                      </div>
+                  </div>
+                  <button class="carousel-btn prev-btn absolute left-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">‹</button>
+                  <button class="carousel-btn next-btn absolute right-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">›</button>
+                  <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+              </div>
+          </div>
+      
+          <div class="mb-16">
+              <h3 class="text-3xl font-bold text-center mb-8">Platforms</h3>
+              <div id="platforms-carousel" class="carousel-container relative w-full overflow-hidden mx-auto max-w-6xl">
+                  <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/KaliP" alt="Kali Linux" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/arch.png" alt="Arch Linux" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/Ubuntu" alt="Ubuntu" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                        <img src="otherimgs/Plats/Powershell" alt="Powershell" class="h-20 object-contain">
+                    </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/GitLab" alt="GitLab" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/docker.png" alt="Docker (Blue Whale Mascot)" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/autopsy-logo.svg" alt="GDB (Dog Mascot)" class="h-20 object-contain">
+                      </div>
+                       <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/GDB" alt="GDB (Text)" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Plats/WireShark.png" alt="Wireshark" class="h-20 object-contain">
+                      </div>
+                  </div>
+                  <button class="carousel-btn prev-btn absolute left-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">‹</button>
+                  <button class="carousel-btn next-btn absolute right-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">›</button>
+                  <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+              </div>
+          </div>
+      
+          <div>
+              <h3 class="text-3xl font-bold text-center mb-8">Languages</h3>
+              <div id="languages-carousel" class="carousel-container relative w-full overflow-hidden mx-auto max-w-6xl">
+                  <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/C++" alt="C++" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/C" alt="C" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/Java" alt="Java" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/rust-logo.png" alt="Rust" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/Python" alt="Python" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                        <img src="otherimgs/Lang/SQL" alt="SQL" class="h-20 object-contain">
+                    </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                          <img src="otherimgs/Lang/HTML" alt="HTML5" class="h-20 object-contain">
+                      </div>
+                      <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                        <img src="otherimgs/Lang/css.jpg" alt="SQL" class="h-20 object-contain">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-1/6 flex justify-center items-center p-4">
+                      <img src="otherimgs/Lang/JS.png" alt="SQL" class="h-20 object-contain">
+                  </div>
+                  </div>
+                  <button class="carousel-btn prev-btn absolute left-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">‹</button>
+                  <button class="carousel-btn next-btn absolute right-0 top-1/2 -translate-y-1/2 bg-zinc-700 p-3 rounded-full text-white z-10 opacity-75 hover:opacity-100 transition">›</button>
+                  <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+              </div>
+          </div>
+      </section>
+      <!--Old Skills plac card style-->
+        <!--section id="skills" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">TypeScript</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">JavaScript</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Python</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Java</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">C++</span>
+                    </div>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Frontend Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">React</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Next.js</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">HTML5</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">CSS3</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-4 text-green-400">Backend Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Node.js</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Express.js</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">MongoDB</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">SQL</span>
+                    </div>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Git</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">GitHub</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">VS Code</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Vercel</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Docker</span>
+                    </div>
+                </div>
+                <div class="bg-zinc-900/50 p-6 rounded-lg shadow-xl border border-zinc-800">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Problem-solving</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Teamwork</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Communication</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gray-200">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <section id="contact" class="py-16 md:py-24 border-t border-zinc-800">
+            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 p-4 bg-zinc-900/50 rounded-lg hover:bg-zinc-800/50 transition-colors duration-300 border border-zinc-800">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26c.73.49 1.58.74 2.44.74h0c.86 0 1.71-.25 2.44-.74L21 8m-18 0a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path></svg>
+                        <div>
+                            <p class="text-gray-400 text-sm">Email</p>
+                            <p class="text-white">ben@vandw.xyz</p>
+                        </div>
+                    </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3 p-4 bg-zinc-900/50 rounded-lg hover:bg-zinc-800/50 transition-colors duration-300 border border-zinc-800">
+                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.5 2.5S0 4.881 0 3.5C0 2.12 1.11 1 2.48 1S4.98 2.12 4.98 3.5zM0 24H5V7H0v17zM17.824 7c-2.317 0-3.324 1.177-3.951 2.25l-.014-.014V7H9.845v17h4.945v-8.2c0-1.802.302-2.164 1.777-2.164 1.475 0 1.475 1.765 1.475 2.164V24h4.945v-8.2c0-4.52-2.488-6.61-5.845-6.61z"/></svg>
+                        <div>
+                            <p class="text-gray-400 text-sm">LinkedIn</p>
+                            <p class="text-white"><a href="https://linkedin.com/in/ben-vandw" target="_blank" rel="noopener noreferrer" class="hover:underline">/in/ben-vandw</a></p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 bg-zinc-900/50 rounded-lg hover:bg-zinc-800/50 transition-colors duration-300 border border-zinc-800">
+                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.169 6.839 9.484.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.704-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.107-1.464-1.107-1.464-.905-.619.069-.607.069-.607 1.002.07 1.531 1.03 1.531 1.03.89 1.529 2.341 1.088 2.91.831.091-.645.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.984 1.029-2.684-.103-.253-.447-1.272.098-2.65 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.115 2.502.339 1.909-1.294 2.747-1.026 2.747-1.026.546 1.378.202 2.397.098 2.65.64.7 1.028 1.592 1.028 2.684 0 3.843-2.339 4.689-4.568 4.935.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .267.18.579.688.484C20.149 20.166 23 16.417 23 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        <div>
+                            <p class="text-gray-400 text-sm">GitHub</p>
+                            <p class="text-white"><a href="https://github.com/benvandw" target="_blank" rel="noopener noreferrer" class="hover:underline">github.com/benvandw</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 border-t border-zinc-800 text-gray-400 text-sm">
+        <p>&copy; 2024 Ben Van Der Weerd. All rights reserved.</p>
     </footer>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
