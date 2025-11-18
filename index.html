@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DockerMC — Modular Minecraft Hosting</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IsolatedCraft - Dockerized Minecraft Hosting</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>DockerMC</h1>
-    <p>Modular Minecraft Hosting, Powered by Containers</p>
-  </header>
 
-  <section id="mission">
-    <h2>Our Mission</h2>
-    <p>
-      At DockerMC, we deliver high-performance Minecraft hosting using containerized infrastructure.
-      Scalable, isolated, and uptime-monitored — built for players who demand control and reliability.
-    </p>
-  </section>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">IsolatedCraft</h1>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#hardware">Hardware</a>
+                <button class="nav-cta">Get Started</button>
+            </nav>
+        </div>
+    </header>
 
-  <section id="server-info">
-    <h2>Server Info</h2>
-    <ul>
-      <li><strong>Address:</strong> <span id="server-address">mod.vandw.xyz</span></li>
-      <li><strong>Port:</strong> <span id="server-port">40001</span></li>
-      <li><strong>Version:</strong> 1.20.2</li>
-      <li><strong>Location:</strong> New Zealand</li>
-    </ul>
-  </section>
-  <section id="pricing">
-    <h2>Hosting Plans (Coming Soon)</h2>
-    <div class="plan-grid">
-      <div class="plan">
-        <h3>Starter</h3>
-        <p>$5/month</p>
-        <ul>
-          <li>1GB RAM</li>
-          <li>1 vCPU</li>
-          <li>Mod Support</li>
-        </ul>
-      </div>
-      <div class="plan">
-        <h3>Pro</h3>
-        <p>$10/month</p>
-        <ul>
-          <li>4GB RAM</li>
-          <li>2 vCPU</li>
-          <li>Dedicated IP</li>
-        </ul>
-      </div>
-      <div class="plan">
-      <h3>Elite</h3>
-        <p>$20/month</p>
-        <ul>
-          <li>8GB RAM</li>
-          <li>4 vCPU</li>
-          <li>Priority Support</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="stats">
-    <h2>Live Stats</h2>
-    <div id="status-box">
-      <p><strong>Status:</strong> <span id="status">Loading...</span></p>
-      <p><strong>Players Online:</strong> <span id="players">--</span></p>
-      <p><strong>Uptime:</strong> <span id="uptime">--</span></p>
-    </div>
-  </section>
+    <section class="hero-section">
+        <div class="container">
+            <h2>The Ultimate **Dockerized** Minecraft Experience.</h2>
+            <p class="subtitle">Full control, complete isolation, and blazing fast performance. Simplicity meets Customization.</p>
+            <button class="cta-primary">View Plans</button>
+            <p class="usp-badge">🛡️ Docker Isolation | 🔧 Full Folder Access | 🌐 Custom Subdomains</p>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 DockerMC. Built with Docker, Pterodactyl, and love.</p>
-  </footer>
+    <section id="features" class="features-section">
+        <div class="container">
+            <h3>Why Choose IsolatedCraft?</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>**Docker Isolation**</h4>
+                    <p>Each server runs in its own lightweight Docker container, guaranteeing **security** and **consistent performance**.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>**Full Customization**</h4>
+                    <p>Complete SFTP/File Manager access to your server's root folder. Install any modpack, plugin, or server type.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>**Easy Subdomains**</h4>
+                    <p>Forget hard-to-remember IPs. Join your server with a simple, custom URL: `yourserver.isolatedcraft.gg`.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h3>Simple, Transparent Pricing</h3>
+            <div class="pricing-grid">
+                <div class="plan-card">
+                    <h4>Starter Plan</h4>
+                    <p class="ram-spec">4GB DDR5 RAM</p>
+                    <p class="price">$10.00/mo</p>
+                    <button class="cta-secondary">Order Now</button>
+                </div>
+                </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="hardware" class="hardware-section">
+        <div class="container">
+            <h3>💪 **High-Performance Hardware**</h3>
+            <p>Our infrastructure is built for stability and speed, ensuring a lag-free experience for your players.</p>
+            <div class="spec-list">
+                <div class="spec-item">
+                    <span class="spec-label">Processor:</span>
+                    <span class="spec-value">AMD Ryzen 5 7600 (High Single-Core Performance)</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">RAM:</span>
+                    <span class="spec-value">16GB+ DDR5 (Fastest available memory)</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Storage:</span>
+                    <span class="spec-value">NVMe SSDs (Ultra-low latency loading)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IsolatedCraft Hosting. | Simple. Custom. Dockerized.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
